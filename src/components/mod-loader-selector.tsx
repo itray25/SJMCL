@@ -95,7 +95,7 @@ export const ModLoaderSelector: React.FC<ModLoaderSelectorProps> = ({
     (version: ModLoaderResourceInfo): OptionItemProps => ({
       onClick: () => {
         if (version.version !== "") {
-          onSelectModLoader(defaultModLoaderResourceInfo);
+          onSelectModLoader(version);
         }
       },
       isFullClickZone: true,

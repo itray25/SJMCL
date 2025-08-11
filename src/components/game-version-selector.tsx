@@ -152,7 +152,8 @@ export const GameVersionSelector: React.FC<GameVersionSelectorProps> = ({
           aria-label="viewOnWiki"
           icon={<LuEarth />}
           variant="ghost"
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             openUrl(
               `${t("Utils.wiki.baseUrl")}${t(`GameVersionSelector.wikiKey.${version.gameType}`)}${
                 version.gameType === "snapshot"
