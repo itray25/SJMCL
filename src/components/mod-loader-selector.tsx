@@ -93,6 +93,12 @@ export const ModLoaderSelector: React.FC<ModLoaderSelectorProps> = ({
 
   const buildOptionItems = useCallback(
     (version: ModLoaderResourceInfo): OptionItemProps => ({
+      onClick: () => {
+        if (version.version !== "") {
+          onSelectModLoader(defaultModLoaderResourceInfo);
+        }
+      },
+      isFullClickZone: true,
       title: version.version,
       description: version.description,
       prefixElement: (

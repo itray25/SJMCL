@@ -125,6 +125,8 @@ export const GameVersionSelector: React.FC<GameVersionSelectorProps> = ({
   const buildOptionItems = (
     version: GameClientResourceInfo
   ): OptionItemProps => ({
+    onClick: () => onVersionSelect(version),
+    isFullClickZone: true,
     title: version.id,
     description: ISOToDatetime(version.releaseTime),
     prefixElement: (
