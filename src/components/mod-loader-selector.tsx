@@ -119,7 +119,7 @@ export const ModLoaderSelector: React.FC<ModLoaderSelectorProps> = ({
       ),
       children: <></>,
     }),
-    [primaryColor, t]
+    [primaryColor, t, onSelectModLoader]
   );
 
   return (
