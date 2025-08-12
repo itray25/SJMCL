@@ -93,12 +93,6 @@ export const ModLoaderSelector: React.FC<ModLoaderSelectorProps> = ({
 
   const buildOptionItems = useCallback(
     (version: ModLoaderResourceInfo): OptionItemProps => ({
-      onClick: () => {
-        if (version.version !== "") {
-          onSelectModLoader(version);
-        }
-      },
-      isFullClickZone: true,
       title: version.version,
       description: version.description,
       prefixElement: (
@@ -118,6 +112,12 @@ export const ModLoaderSelector: React.FC<ModLoaderSelectorProps> = ({
         </Tag>
       ),
       children: <></>,
+      isFullClickZone: true,
+      onClick: () => {
+        if (version.version !== "") {
+          onSelectModLoader(version);
+        }
+      },
     }),
     [primaryColor, t, onSelectModLoader]
   );
